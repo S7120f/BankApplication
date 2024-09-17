@@ -6,12 +6,27 @@ public class App {
         Scanner input = new Scanner(System.in); 
 
         int saldo = 0; // en variable för att hålla koll på saldot på kontot
+        boolean run = true;
 
 
         // skapa funktion för att se hur mycket saldo det finns på konto 
 
         System.out.println("Välkommen till banken! Välj ett alternativ?  n 1. Se saldo");
         int val = input.nextInt();
+
+        while (run) {
+
+            switch (val) {
+                case 1:
+                    System.out.println("Ditt saldo är " + saldo);
+                    break;
+
+            
+                default:
+                    break;
+            }
+
+        }
 
         
 

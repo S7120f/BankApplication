@@ -18,7 +18,7 @@ public class App {
             if (input.hasNextInt()) { // kolla om input är ett heltal
                 int choice = input.nextInt();  // läser användarens val
                 switch (choice) { // switch case för att välja val
-                    case 1:
+                    case 1: 
                         getBalance();
                         break;
 
@@ -35,7 +35,7 @@ public class App {
                         break;
 
                     default: // om fel val görs
-                        System.out.println("Felaktigt val. Vänligen välj ett nummer mellan 1 och 4."); // om fel val görs i menyn
+                        System.out.println("Felaktigt val. Vänligen välj ett nummer mellan 1 och 4."); // om annat val än 1-4 görs
                         break;
                 }
 
@@ -55,13 +55,14 @@ public class App {
     // metod för insättning
     public static void deposit() {
         System.out.println("Välj belopp att sätta in på kontot: ");
-        if (input.hasNextDouble()) { // kolla om input är ett nummer
+
+        if (input.hasNextDouble()) { // kolla om input är giltigt decimaltal
             double deposit = input.nextDouble(); // läser in insättning
             if (deposit > 0) {
                 balance += deposit;
                 System.out.println(deposit + " kronor har blivit insatt på ditt konto.");
             } else {
-                System.out.println("Felaktigt inmatning. Vänligen ange ett positivt nummer.");
+                System.out.println("Felaktigt inmatning. Vänligen ange ett positivt belopp.");
             }
         } else { // om input inte är ett nummer
             System.out.println("Felaktigt inmatning. Vänligen ange ett belopp.");
@@ -74,14 +75,14 @@ public class App {
     // metod för uttag
     public static void withdraw() {
         System.out.println("Välj belopp att ta ut från kontot: ");
+
         if (input.hasNextDouble()) { // kolla om input är ett giltigt decimaltal
             double withdraw = input.nextDouble();
             if (withdraw > balance) { // om uttaget är större än saldot
                 System.out.println("Du har inte tillräckligt med pengar på kontot.");
             } else if (withdraw <= 0) { // om uttaget är mindre än eller lika med 0
                 System.out.println("Felaktigt inmatning. Beloppet måste vara större än 0.");
-            }
-            else {
+            } else {
                 balance -= withdraw;
                 System.out.println(withdraw + " kronor har blivit uttaget från ditt konto.");
             }
@@ -96,5 +97,4 @@ public class App {
     public static void exit() { 
         System.out.println("Tack för att du använde banken. Ha en bra dag!");
     }
-
 }

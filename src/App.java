@@ -93,7 +93,7 @@ public class App {
     }
 
     // metod för att avsluta programmet
-    public static void exit() {
+    public static void exit() { 
         System.out.println("Tack för att du använde banken. Ha en bra dag!");
     }
 
